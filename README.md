@@ -1,6 +1,4 @@
 # re-melancholy
-a simple cheat for TF2
-
 notes
 
 aimbot's autoshoot "SO" mode is sniper specific, it only autoshoots when the sniper is scoped in and can inflict headshot damage.
