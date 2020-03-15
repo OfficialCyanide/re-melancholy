@@ -1,5 +1,5 @@
 # re-melancholy
-a Simple Cheat for Team Fortress 2
+a simple cheat for TF2
 
 notes
 
