@@ -14,3 +14,5 @@ left click - decreases the values of: ints, floats, aliases and/or toggles: bool
 right click - increases the values of: ints, floats, aliases.
 
 holding the keys will dec/inc values quicker.
+
+oh and don't forget to set Release/x86 when building
