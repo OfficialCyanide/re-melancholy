@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{a7588954-5f59-4b49-8a97-ce07544f2696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\math">
+      <UniqueIdentifier>{240c8847-7139-419c-867d-d2b75d8e6f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\pattern">
+      <UniqueIdentifier>{dde45049-54dd-46ba-86c3-566956117cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\interface">
+      <UniqueIdentifier>{cdea37e6-3f0c-4f7e-a181-45d8968984a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\vfunc">
+      <UniqueIdentifier>{75c6298a-554f-4b19-a290-f2a4195bc2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\color">
+      <UniqueIdentifier>{ad40a8ea-1cd9-4a22-b64b-5db4eb724726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\sdk">
+      <UniqueIdentifier>{4d657540-5f79-4f7c-937a-93595def797e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\dynvars">
+      <UniqueIdentifier>{8e8ee4e8-cfc8-4fa2-960a-984587cce71a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hooks">
+      <UniqueIdentifier>{fbf8c3ee-cf46-4333-a427-183c5131b2e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules">
+      <UniqueIdentifier>{5c2ef29e-32e4-4488-8c3f-bdd84dc318fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\esp">
+      <UniqueIdentifier>{074c5781-7ab7-4290-b1e5-3ce7b6f71e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\vmt">
+      <UniqueIdentifier>{a767ec36-192b-4d63-87be-110f1a4085a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\menu">
+      <UniqueIdentifier>{df8be117-811b-4241-a44e-8e0ecfb93d84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\aimboat">
+      <UniqueIdentifier>{1516d631-eb9f-4328-a324-e14fdfc0650a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils\utlvector">
+      <UniqueIdentifier>{4cbab59b-c8b3-4f79-82a6-f1f80a2492eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\misc">
+      <UniqueIdentifier>{f04ccb73-6ad3-421c-9a82-9c8c1ee2b942}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dynvars\dynvars.cpp">
+      <Filter>Header Files\dynvars</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\esp\esp.cpp">
+      <Filter>Header Files\modules\esp</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\sdk.cpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\menu\menu.cpp">
+      <Filter>Header Files\modules\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\aimbot\aimbot.cpp">
+      <Filter>Header Files\modules\aimboat</Filter>
+    </ClCompile>
+    <ClCompile Include="modules\misc\misc.cpp">
+      <Filter>Header Files\modules\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\vmt\vmt.cpp">
+      <Filter>Header Files\utils\vmt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils\math\math.hpp">
+      <Filter>Header Files\utils\math</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\vector.hpp">
+      <Filter>Header Files\utils\math</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utils.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\pattern\pattern.hpp">
+      <Filter>Header Files\utils\pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\interface\interface.hpp">
+      <Filter>Header Files\utils\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vfunc\vfunc.hpp">
+      <Filter>Header Files\utils\vfunc</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\color\color.hpp">
+      <Filter>Header Files\utils\color</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\sdk.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\dt_common2.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\dt_recv2.hpp">
+      <Filter>Header Files\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="dynvars\dynvars.hpp">
+      <Filter>Header Files\dynvars</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hooks.hpp">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\modules.hpp">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\esp\esp.hpp">
+      <Filter>Header Files\modules\esp</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\menu\menu.hpp">
+      <Filter>Header Files\modules\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\aimbot\aimbot.hpp">
+      <Filter>Header Files\modules\aimboat</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utlvector\utlvector.hpp">
+      <Filter>Header Files\utils\utlvector</Filter>
+    </ClInclude>
+    <ClInclude Include="modules\misc\misc.hpp">
+      <Filter>Header Files\modules\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vmt\vmt.h">
+      <Filter>Header Files\utils\vmt</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
