@@ -1,7 +1,7 @@
 # re-melancholy
 notes
 
-aimbot's autoshoot "SO" mode is sniper specific, it only autoshoots when the sniper is scoped in and can inflict headshot damage.
+aimbot's autoshoot "SO" mode is sniper specific, it only autoshoots when the sniper is scoped in.
 
 for glow to work you must manually set the "glow_outline_effect_enable" convar to 1 (if it's not set to 1 already).
 
