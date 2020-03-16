@@ -29,6 +29,7 @@ public:
 	bool no_melee		= false;
 	float multipoint	= 0.5f;		//0.5 is off
 	bool hitscan		= true;
+	bool ignore_cloaked = false;
 
 	int cur_target_idx = -1;
 

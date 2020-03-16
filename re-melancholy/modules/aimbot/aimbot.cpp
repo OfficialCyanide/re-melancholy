@@ -6,7 +6,10 @@ bool _aimbot::is_key_down()
 		case 0: { return (GetAsyncKeyState(VK_LSHIFT) & 0x8000); }
 		case 1: { return (GetAsyncKeyState(VK_LBUTTON) & 0x8000); }
 		case 2: { return true; }
+		default: { return false; }
 	}
+
+	return false;
 }
 
 void _aimbot::set_angles(sdk::userCmd *cmd, math::vec3 &angles)
@@ -98,7 +101,8 @@ _aimbot::aimTarget _aimbot::get_target(sdk::baseEntity *local, sdk::baseCombatWe
 			|| !ent->is_alive()
 			|| ent->is_dormant()
 			|| !ent->is_vulnerable()
-			|| ent->get_team_num() == local->get_team_num())
+			|| ent->get_team_num() == local->get_team_num()
+			|| ignore_cloaked && ent->is_cloaked())
 			continue;
 
 		math::vec3 ent_pos		= ent->get_hitbox_pos(aim_hitbox == -1 ? get_best_hitbox(local, wep) : aim_hitbox);
@@ -192,7 +196,7 @@ void _aimbot::run(sdk::baseEntity *local, sdk::userCmd *cmd)
 {
 	cur_target_idx = -1;
 
-	if (active && local->is_alive() && !local->is_taunting())
+	if (active && local->is_alive() && !local->is_taunting()) //got a bit sick of "if false return" here
 	{
 		sdk::baseCombatWeapon *local_wep = local->get_active_weapon();
 

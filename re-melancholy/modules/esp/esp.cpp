@@ -137,6 +137,9 @@ void _esp::run(sdk::baseEntity *local)
 			if (!ent->is_alive() || no_teammate_players && ent->get_team_num() == local->get_team_num())
 				continue;
 
+			if (ignore_cloaked && ent->is_cloaked())
+				continue;
+
 			color clr = (no_teammate_players ? col_enemy : utils::get_team_color(ent->get_team_num()));
 
 			if (!ent->is_vulnerable())
@@ -380,6 +383,9 @@ void _esp::run_glow(sdk::baseEntity *local, sdk::clientFrameStage frame)
 			sdk::baseEntity *ent = get_ent(n);
 
 			if (ent == nullptr || ent == local || !ent->is_player() && !ent->is_building())
+				continue;
+
+			if (ignore_cloaked && ent->is_cloaked())
 				continue;
 
 			if (ent->is_player()) {

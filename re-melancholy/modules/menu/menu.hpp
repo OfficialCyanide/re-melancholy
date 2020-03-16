@@ -325,15 +325,16 @@ public:
 			items =
 			{
 				new itemTab("AIMBOT", {
-					new itemBool	("active",		&aimbot.active),
-					new itemBool	("silent",		&aimbot.silent),
-					new itemAlias	("key",			&aimbot.aim_key,		{ { 0, "lshift" }, { 1, "lbutton" }, { 2, "always" } }),
-					new itemAlias	("auto shoot",	&aimbot.autoshoot,		{ { 0, "off" }, { 1, "on" }, { 2, "SO" } }),
-					new itemFloat	("fov",			&aimbot.aim_fov,		1.0f, 180.0f),
-					new itemAlias	("hitbox",		&aimbot.aim_hitbox,		{ { -1, "auto" }, { sdk::hitbox_head, "head" }, { sdk::hitbox_pelvis, "body" } }),
-					new itemBool	("no melee",	&aimbot.no_melee),
-					new itemFloat	("multipoint",	&aimbot.multipoint,		0.5f, 0.9f, 0.1f, 1),
-					new itemBool	("hitscan",		&aimbot.hitscan)
+					new itemBool	("active",			&aimbot.active),
+					new itemBool	("silent",			&aimbot.silent),
+					new itemAlias	("key",				&aimbot.aim_key,		{ { 0, "lshift" }, { 1, "lbutton" }, { 2, "always" } }),
+					new itemAlias	("auto shoot",		&aimbot.autoshoot,		{ { 0, "off" }, { 1, "on" }, { 2, "SO" } }),
+					new itemFloat	("fov",				&aimbot.aim_fov,		1.0f, 180.0f),
+					new itemAlias	("hitbox",			&aimbot.aim_hitbox,		{ { -1, "auto" }, { sdk::hitbox_head, "head" }, { sdk::hitbox_pelvis, "body" } }),
+					new itemBool	("no melee",		&aimbot.no_melee),
+					new itemFloat	("multipoint",		&aimbot.multipoint,		0.5f, 0.9f, 0.1f, 1),
+					new itemBool	("hitscan",			&aimbot.hitscan),
+					new itemBool	("ignore cloaked",	&aimbot.ignore_cloaked)
 				}),
 
 				new itemTab("ESP", {
@@ -350,6 +351,7 @@ public:
 					new itemTab("ESP - PLAYERS", {
 						new itemBool("active",			&esp.players),
 						new itemBool("no teammates",	&esp.no_teammate_players),
+						new itemBool("ignore cloaked",	&esp.ignore_cloaked),
 						new itemBool("name",			&esp.player_name),
 						new itemBool("health",			&esp.player_health),
 						new itemBool("class",			&esp.player_class),

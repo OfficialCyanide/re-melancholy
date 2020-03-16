@@ -45,6 +45,7 @@ public:
 
 	bool players				= true;
 	bool no_teammate_players	= true;
+	bool ignore_cloaked			= false;
 	bool player_name			= true;
 	bool player_health			= true;
 	bool player_class			= true;
