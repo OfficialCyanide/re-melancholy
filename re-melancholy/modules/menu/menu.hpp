@@ -200,6 +200,17 @@ private:
 								*ptr += 1;
 					}
 
+					std::string val = std::to_string(*ptr);
+
+					if (*ptr != min && *ptr != max)
+						val = ("< " + val + " >");
+
+					else if (*ptr == min)
+						val = (val + " >");
+
+					else if (*ptr == max)
+						val = ("< " + val);
+
 					draw.string(
 						(menu_x + name_offset_x),
 						(menu_y + (font_tall * drawn_count)),
@@ -210,7 +221,7 @@ private:
 						(menu_x + val_offset_x),
 						(menu_y + (font_tall * drawn_count)),
 						(is_hovered ? col_item_selected : col_item_normal),
-						std::to_string(*ptr).c_str());
+						val.c_str());
 
 					drawn_count++;
 					break;
@@ -234,6 +245,17 @@ private:
 								*ptr += step;
 					}
 
+					std::string val = (precision > 0 ? format_flt(*ptr, precision) : std::to_string(static_cast<int>(*ptr)));
+
+					if (*ptr != min && *ptr != max)
+						val = ("< " + val + " >");
+
+					else if (*ptr == min)
+						val = (val + " >");
+
+					else if (*ptr == max)
+						val = ("< " + val);
+
 					draw.string(
 						(menu_x + name_offset_x),
 						(menu_y + (font_tall * drawn_count)),
@@ -244,7 +266,7 @@ private:
 						(menu_x + val_offset_x),
 						(menu_y + (font_tall * drawn_count)),
 						(is_hovered ? col_item_selected : col_item_normal),
-						(precision > 0 ? format_flt(*ptr, precision) : std::to_string(static_cast<int>(*ptr))).c_str());
+						val.c_str());
 
 					drawn_count++;
 					break;
@@ -254,6 +276,8 @@ private:
 				{
 					itemAlias *alias	= reinterpret_cast<itemAlias*>(v);
 					int *ptr			= reinterpret_cast<int*>(alias->ptr);
+					int min				= 0;
+					int max				= (alias->aliases.size() - 1);
 
 					if (is_hovered) {
 						if (key::is_pressed(VK_LBUTTON))
@@ -265,6 +289,17 @@ private:
 								*ptr = alias->aliases.at(++alias->cur_alias_idx).first;
 					}
 
+					std::string val = alias->aliases.at(alias->cur_alias_idx).second;
+
+					if (alias->cur_alias_idx != min && alias->cur_alias_idx != max)
+						val = ("< " + val + " >");
+
+					else if (alias->cur_alias_idx == min)
+						val = (val + " >");
+
+					else if (alias->cur_alias_idx == max)
+						val = ("< " + val);
+
 					draw.string(
 						(menu_x + name_offset_x),
 						(menu_y + (font_tall * drawn_count)),
@@ -275,7 +310,7 @@ private:
 						(menu_x + val_offset_x),
 						(menu_y + (font_tall * drawn_count)),
 						(is_hovered ? col_item_selected : col_item_normal),
-						alias->aliases.at(alias->cur_alias_idx).second.c_str());
+						val.c_str());
 
 					drawn_count++;
 					break;
@@ -320,7 +355,7 @@ public:
 
 		if (!init)
 		{
-			draw = surfaceWrapper("Montserrat", font_tall, 50, sdk::fontflag_antialias);
+			draw = surfaceWrapper("Arial", (font_tall - 1), 200, sdk::fontflag_none);
 
 			items =
 			{
@@ -332,7 +367,7 @@ public:
 					new itemFloat	("fov",				&aimbot.aim_fov,		1.0f, 180.0f),
 					new itemAlias	("hitbox",			&aimbot.aim_hitbox,		{ { -1, "auto" }, { sdk::hitbox_head, "head" }, { sdk::hitbox_pelvis, "body" } }),
 					new itemBool	("no melee",		&aimbot.no_melee),
-					new itemFloat	("multipoint",		&aimbot.multipoint,		0.5f, 0.9f, 0.1f, 1),
+					new itemFloat	("multipoint",		&aimbot.multipoint,		0.5f, 0.9f, 0.05f, 2),
 					new itemBool	("hitscan",			&aimbot.hitscan),
 					new itemBool	("ignore cloaked",	&aimbot.ignore_cloaked)
 				}),
